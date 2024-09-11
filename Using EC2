@@ -1,0 +1,16 @@
+# Steps to use EC2 on AWS
+
+Amazon EC2 (Elastic Compute Cloud) on AWS (Amazon Web Services) is a service that provides scalable computing capacity in the cloud. It allows users to rent virtual 
+servers (referred to as EC2 instances) to run applications, perform tasks, or host websites. With EC2, users can easily scale computing resources up or down based on their needs, paying only for the capacity they use.
+
+---
+
+## Table of Contents
+
+- [Creating AWS account](#AWS Account)  
+- [Using EC2](#Using EC2)
+- [Download Putty](#Downloading Putty)
+- [Using Putty terminal](#Using Putty Terminal)
+
+---
+
