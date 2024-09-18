@@ -133,6 +133,7 @@ Popular frameworks and tools:
 - **Packets**: Small units of data transmitted over a network, integral to the internet's functioning.
 - **Firewalls**: Protect networks from unauthorized access.
 - **APIs**: Allow different software components to communicate with each other.
+- **Docker**: Docker is a platform to simplify the process of containing, deploying, and running applications by packaging them all into simple conatainers which can be deployed on any system. This removes the problem of "It doesn't work on my system".
 
 ---
 
