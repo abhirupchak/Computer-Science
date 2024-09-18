@@ -25,9 +25,6 @@ Docker is a platform that allows you to automate the deployment of applications 
 
 Docker Hub is a cloud-based registry where Docker images are stored. You can find pre-built images for various applications or upload your own.
 
-**Useful commands for Docker Hub:**
-- docker pull <image_name>: Pulls an image from Docker Hub.
-
 ---
 
 ## Docker Images
@@ -81,7 +78,7 @@ Tags are used to identify different versions of a Docker image.
 - -p: Publish ports.
 - -v: Mount volumes.
 - -t: Allocate a pseudo-TTY.
-- -i: Keep STDIN open even if not attached.
+- -i: Keep STDIN open even if not attached.####
 - -e: Set environment variables.
 - -d: Run in detached mode.
 - -a: Attach to the container's STDOUT.
