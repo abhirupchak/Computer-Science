@@ -77,8 +77,7 @@ Tags are used to identify different versions of a Docker image.
 **Common Tags:**
 - -p: Publish ports.
 - -v: Mount volumes.
-- -t: Allocate a pseudo-TTY.
-- -i: Keep STDIN open even if not attached.####
+- -t and -i tags can be used in combination to interact directly with the container as if it were a terminal.
 - -e: Set environment variables.
 - -d: Run in detached mode.
 - -a: Attach to the container's STDOUT.
