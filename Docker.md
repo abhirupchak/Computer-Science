@@ -9,9 +9,8 @@ A quick reference guide to Docker commands, tags, and basic usage. This document
 2. [Docker Hub](#docker-hub)
 3. [Docker Images](#docker-images)
 4. [Common Docker Commands](#common-docker-commands)
-5. [Docker Tags](#docker-tags)
-6. [Creating Your Own Docker Image](#creating-your-own-docker-image)
-7. [Environmental Variables](#environmental-variables)
+5. [Creating Your Own Docker Image](#creating-your-own-docker-image)
+6. [Environmental Variables](#environmental-variables)
 
 ---
 
@@ -66,14 +65,6 @@ A Docker image is a lightweight, standalone, and executable package that include
 
 7. **Remove an Image:**
    docker rmi <image_name>
-
----
-
-## Docker Tags
-
-Tags are used to identify different versions of a Docker image.
-
-
 
 ---
 
