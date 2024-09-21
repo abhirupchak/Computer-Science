@@ -138,22 +138,22 @@ The contents of yaml file should be in the following format:
 ## Common Docker Compose Commands:
 # Docker Compose Commands
 
-## 1. `docker-compose up`
+## 1. docker-compose up
 Starts up the containers defined in the `docker-compose.yml` file.
 
-## 2. `docker-compose down`
+## 2. docker-compose down
 Stops and removes all containers defined in the `docker-compose.yml` file.
 
-## 3. `docker-compose ps`
+## 3. docker-compose ps
 Lists the containers defined in the Compose file.
 
-## 4. `docker-compose logs`
+## 4. docker-compose logs
 Displays the logs for services defined in the Compose file.
 
-## 5. `docker-compose start`
+## 5. docker-compose start
 Starts existing containers for a service.
 
-## 6. `docker-compose stop`
+## 6. docker-compose stop
 Stops running containers for a service.
 
 
