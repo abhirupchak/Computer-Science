@@ -42,30 +42,29 @@ A Docker image is a lightweight, standalone, and executable package that include
 
 1. **Run a Container:**
    docker run [options] <image_name>
-
    Options:
-   - -d: Run the container in detached mode.
-   - -p: Publish a container’s port to the host (e.g., -p 8080:80).
-   - --name: Assign a name to the container.
-   - -v: Mount volumes from the host to the container.
-   - -e: Set environment variables.
-   - -i: Run the container in interactive mode.
-   - -t: Allocate a pseudo-TTY.
+      **Common Tags:**
+          -p: Publish ports.
+          -v: Mount volumes.
+          -t and -i tags can be used in combination to interact directly with the container as if it were a terminal.
+          -e: Set environment variables.
+          -d: Run in detached mode.
+          -a: Attach to the container's STDOUT.
 
-2. **Exec into a Running Container:**
+3. **Exec into a Running Container:**
    docker exec -it <container_name> /bin/bash
 
-3. **List Running Containers:**
+4. **List Running Containers:**
    docker ps
 
-4. **Inspect a Container:**
+5. **Inspect a Container:**
    docker inspect <container_name>
 
-5. **Stop and Remove Containers:**
+6. **Stop and Remove Containers:**
    docker stop <container_name>
    docker rm <container_name>
 
-6. **Remove an Image:**
+7. **Remove an Image:**
    docker rmi <image_name>
 
 ---
@@ -74,13 +73,7 @@ A Docker image is a lightweight, standalone, and executable package that include
 
 Tags are used to identify different versions of a Docker image.
 
-**Common Tags:**
-- -p: Publish ports.
-- -v: Mount volumes.
-- -t and -i tags can be used in combination to interact directly with the container as if it were a terminal.
-- -e: Set environment variables.
-- -d: Run in detached mode.
-- -a: Attach to the container's STDOUT.
+
 
 ---
 
@@ -147,9 +140,9 @@ The contents of yaml file should be in the following format:
           volumes:
             - .:/app
           environment:
-            - FLASK_ENV=development
+            - VAR_NAME=var_value
         redis:
-          image: "redis:alpine"
+          image: "image-name"
 
 ## Common Docker Compose Commands:
 # Docker Compose Commands
