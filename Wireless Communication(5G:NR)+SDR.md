@@ -31,11 +31,14 @@
 - **Pathloss**: Energy lost during transmission.
 - **Noise**: Random signals that affect the intended signal.
 - **Interference**: When multiple transmitters on the same frequency emit signals that can overlap.
+   ![Factors affecting data rates](https://github.com/abhirupchak/Computer-Science/blob/main/images/Screenshot%202024-10-02%20160854.png)
 
 ## Radio Channels and Bandwidth
 - **Radio Channel**: A slice of the radio spectrum; bandwidth is a precious resource managed by entities like the **FCC**.
 - **Multiple Access**: When many users attempt to access the same channel simultaneously, an algorithm allocates resources to each user based on their needs.
+- **FDD** and **TDD** are some algorithms designed for multiple access.
 - **Spectral Efficiency**: A measure of how efficiently the spectrum allocated to a specific channel is being used.
+  ![FDD AND TDD](https://github.com/abhirupchak/Computer-Science/blob/main/images/Screenshot%202024-10-02%20155405.png)
 
 ## 5G Overview
 - **5G New Radio (NR)**: The latest generation of mobile communication technology.
@@ -55,6 +58,7 @@
   - Relies on a 4G core network, so no end-to-end 5G connectivity.
   - Requires newer phones that support both 5G and 4G.
 - **Data Network**: Provides operator services to users.
+  ![5g architecture](https://github.com/abhirupchak/Computer-Science/blob/main/images/Screenshot%202024-10-02%20205451.png)
 
 ## 5G Techniques and Technologies
 - **OFDM (Orthogonal Frequency Division Multiplexing)**: Divides a wideband channel into multiple smaller narrowbands.
@@ -64,7 +68,7 @@
   - Utilizes multiple transmitters and receivers using the same frequency channel.
   - Signals are encoded differently to prevent interference.
   - **Massive MIMO** is a larger-scale implementation of MIMO, allowing more simultaneous data streams.
-
+  ![5g techniques](https://github.com/abhirupchak/Computer-Science/blob/main/images/Screenshot%202024-10-04%20222923.png)
 ## 5G Cloud Compatibility
 - 5G aims to be more **cloud-compatible**:
   - Data can be stored and managed on the cloud.
