@@ -65,11 +65,24 @@
 1. Choose or create a security group for the load balancer to allow inbound HTTP/HTTPS traffic.
 2. Attach the security group to the load balancer.
 
-### Step 5: Set Up Listener and Routing
-1. Configure a listener under **Listeners and Routing**:
-   - Port **80** (HTTP) or **443** (HTTPS).
-   - **Default Action**: Select `MyTargetGroup`.
-2. Click **Create Load Balancer**.
+### Step 5: Set Up Route Tables
+
+1. **Create a Route Table for Public Subnets**:
+   - Go to **Route Tables** > **Create Route Table**.
+   - Name it (e.g., `PublicRouteTable`) and associate it with **MyVPC**.
+   - Under **Routes**, add the following:
+     - **Destination**: `0.0.0.0/0` (for Internet access)
+     - **Target**: Select the Internet Gateway you created.
+   - **Associations**: Attach this route table to the public subnets (`S3-Public` and `S4-Public`).
+
+2. **Create a Route Table for Private Subnets**:
+   - Go to **Route Tables** > **Create Route Table**.
+   - Name it (e.g., `PrivateRouteTable`) and associate it with **MyVPC**.
+   - Under **Routes**, add the following:
+     - **Destination**: `192.168.0.0/16` (for internal access via VPN)
+     - **Target**: Select the Virtual Private Gateway if you created one.
+   - **Associations**: Attach this route table to the private subnets (`S1-Private` and `S2-Private`).
+
 
 ### Step 6: Test the Load Balancer
 1. Go to **Load Balancers** in the EC2 dashboard.
