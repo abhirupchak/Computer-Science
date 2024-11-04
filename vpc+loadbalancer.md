@@ -26,17 +26,30 @@
 2. Name it (e.g., `MyInternetGateway`).
 3. Click **Create**, select it, click **Actions**, then **Attach to VPC** and choose `MyVPC`.
 
-### Step 4: Create and Attach a Virtual Private Gateway 
+### Step 4: Create and Attach a Virtual Private Gateway (Optional)
 1. Go to **VPN Connections** > **Virtual Private Gateways**.
 2. Click **Create Virtual Private Gateway** and name it (e.g., `MyVGW`).
 3. Attach it to `MyVPC`.
 
 ### Step 5: Set Up Route Tables
-1. Go to **Route Tables** > **Create Route Table** and name it (e.g., `PublicRouteTable`).
-2. Under **Routes**, add:
-   - **Destination** `0.0.0.0/0` with **Target** set to the Internet Gateway (for public access).
-3. Associate this route table with the public subnets (`S3-Public` and `S4-Public`).
-4. For private subnets, create another route table without an Internet route and associate it with the private subnets (`S1-Private` and `S2-Private`).
+
+1. **Create a Route Table for Public Subnets**:
+   - Go to **Route Tables** > **Create Route Table**.
+   - Name it (e.g., `PublicRouteTable`) and associate it with **MyVPC**.
+   - Under **Routes**, add the following:
+     - **Destination**: `0.0.0.0/0` (for Internet access)
+     - **Target**: Select the Internet Gateway you created.
+   - **Associations**: Attach this route table to the public subnets (`S3-Public` and `S4-Public`).
+
+2. **Create a Route Table for Private Subnets**:
+   - Go to **Route Tables** > **Create Route Table**.
+   - Name it (e.g., `PrivateRouteTable`) and associate it with **MyVPC**.
+   - Under **Routes**, add the following:
+     - **Destination**: `192.168.0.0/16` (for internal access via VPN)
+     - **Target**: Select the Virtual Private Gateway if you created one.
+   - **Associations**: Attach this route table to the private subnets (`S1-Private` and `S2-Private`).
+
+
 
 ## Load Balancer Setup
 
@@ -65,27 +78,16 @@
 1. Choose or create a security group for the load balancer to allow inbound HTTP/HTTPS traffic.
 2. Attach the security group to the load balancer.
 
-### Step 5: Set Up Route Tables
-
-1. **Create a Route Table for Public Subnets**:
-   - Go to **Route Tables** > **Create Route Table**.
-   - Name it (e.g., `PublicRouteTable`) and associate it with **MyVPC**.
-   - Under **Routes**, add the following:
-     - **Destination**: `0.0.0.0/0` (for Internet access)
-     - **Target**: Select the Internet Gateway you created.
-   - **Associations**: Attach this route table to the public subnets (`S3-Public` and `S4-Public`).
-
-2. **Create a Route Table for Private Subnets**:
-   - Go to **Route Tables** > **Create Route Table**.
-   - Name it (e.g., `PrivateRouteTable`) and associate it with **MyVPC**.
-   - Under **Routes**, add the following:
-     - **Destination**: `192.168.0.0/16` (for internal access via VPN)
-     - **Target**: Select the Virtual Private Gateway if you created one.
-   - **Associations**: Attach this route table to the private subnets (`S1-Private` and `S2-Private`).
-
+### Step 5: Set Up Listener and Routing
+1. Configure a listener under **Listeners and Routing**:
+   - Port **80** (HTTP) or **443** (HTTPS).
+   - **Default Action**: Select `MyTargetGroup`.
+2. Click **Create Load Balancer**.
 
 ### Step 6: Test the Load Balancer
 1. Go to **Load Balancers** in the EC2 dashboard.
 2. Copy the **DNS name** of the load balancer.
 3. Open a web browser and paste the DNS name to verify traffic routing.
+
+
 
