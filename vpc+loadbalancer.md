@@ -84,10 +84,6 @@
    - **Default Action**: Select `MyTargetGroup`.
 2. Click **Create Load Balancer**.
 
-### Step 6: Test the Load Balancer
-1. Go to **Load Balancers** in the EC2 dashboard.
-2. Copy the **DNS name** of the load balancer.
-3. Open a web browser and paste the DNS name to verify traffic routing.
 
 
 
